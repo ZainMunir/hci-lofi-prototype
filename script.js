@@ -40,7 +40,8 @@ window.addEventListener("DOMContentLoaded", () => {
     let back1_button = document.getElementById("back1");
     back1_button.addEventListener("click", go_back.bind(null, "starting-page", "details-page"));
 
-    function go_back(prev, curr) {
+    function go_back(prev, curr, e) {
+        e.preventDefault();
         document.getElementById(prev).classList.toggle("hidden");
         document.getElementById(curr).classList.toggle("hidden");
     }
