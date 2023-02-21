@@ -11,13 +11,18 @@ body {
 #container {
     width: 400px;
     height: 500px;
+}
+#container > div {
+    height: 100%;
+}
+
+#starting-page {
     display: flex;
     flex-direction: column;
 }
 
 #signup-options, #details-page {
     width: 85%;
-    height: 100%;
     margin: auto;
 }
 
@@ -49,7 +54,7 @@ body {
         "labels inputs";
 }
 
-#details-page form * {
+#details-page form div * {
     margin-bottom: 20px;
 }
 
@@ -71,7 +76,7 @@ body {
 }
 
 #logo {
-    height: 400px;
+    height: 40%;
     display: flex;
     justify-content: center;
     align-content: center;

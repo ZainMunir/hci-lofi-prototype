@@ -7,6 +7,8 @@ window.addEventListener("DOMContentLoaded", () => {
     let weight;
     let weight_units;
     let name;
+    let starting_page = document.getElementById("starting-page");
+    let details_page = document.getElementById("details-page");
 
     let signup_button = document.getElementById("signup");
     signup_button.addEventListener("click", (e) => {
@@ -17,9 +19,7 @@ window.addEventListener("DOMContentLoaded", () => {
             e.preventDefault();
             email = email_input.value;
             password = password_input.value;
-            container.innerHTML = "";
-            let details_page = document.getElementById("details-page");
-            container.append(details_page);
+            starting_page.classList.toggle("hidden");
             details_page.classList.toggle("hidden");
         }
     })
@@ -31,10 +31,17 @@ window.addEventListener("DOMContentLoaded", () => {
             name = document.getElementById("name").value;
             weight = document.getElementById("weight").value;
             weight_units = document.querySelector('input[name="weight-measurement"]:checked').value;
-            container.innerHTML = "";
             let goals_page = document.getElementById("goals-page");
-            container.append(goals_page);
+            details_page.classList.toggle("hidden");
             goals_page.classList.toggle("hidden");
         }
     })
+
+    let back1_button = document.getElementById("back1");
+    back1_button.addEventListener("click", go_back.bind(null, "starting-page", "details-page"));
+
+    function go_back(prev, curr) {
+        document.getElementById(prev).classList.toggle("hidden");
+        document.getElementById(curr).classList.toggle("hidden");
+    }
 })
