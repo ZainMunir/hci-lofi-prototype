@@ -1,3 +1,89 @@
+body {
+    display: flex;
+    justify-content: center;
+}
+
+#container, #logo {
+    border: 1px solid black;
+    margin: 20px;
+}
+
+#container {
+    width: 400px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+}
+
+#signup-options, #details-page {
+    width: 85%;
+    height: 100%;
+    margin: auto;
+}
+
+#signup-form, #signup-options, #details-page {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#signup-form * {
+    text-align: center;
+    width: 80%;
+    margin: 10px auto;
+}
+
+#labels {
+    grid-area: labels;
+}
+
+#inputs {
+    grid-area: inputs;
+}
+
+#details-form {
+    display: grid;
+    grid-template-columns: 30% auto;
+    grid-template-areas:
+        "labels inputs";
+}
+
+#details-page form * {
+    margin-bottom: 20px;
+}
+
+#labels label {
+    display: block;
+    font-size: 20px;
+}
+
+
+#details-form input, select {
+    width: 100%;
+}
+
+#details-form input[type="number"] {
+    width: 30%;
+}
+#details-form input[type="radio"] {
+    width: auto;
+}
+
+#logo {
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
 h1 {
-    color: turquoise;
+    font-size: 60px;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+}
+
+.hidden {
+    display: none !important;
 }
