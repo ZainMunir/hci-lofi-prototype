@@ -1,80 +1,84 @@
+/* Center the content in the body */
 body {
     display: flex;
     justify-content: center;
 }
 
-#container, #logo {
+/* Add a border and margin to #container and #logo */
+#container,
+#logo {
     border: 1px solid black;
     margin: 20px;
 }
 
+/* Set width and height for #container and its child div elements */
 #container {
     width: 400px;
     height: 500px;
 }
-#container > div {
+
+#container>div {
     height: 100%;
 }
 
-#starting-page {
-    display: flex;
-    flex-direction: column;
-}
-
-#signup-options, #details-page {
+/* Set width and margin for #signup-options and #details-page */
+#signup-options,
+#details-page {
     width: 85%;
     margin: auto;
 }
 
-#signup-form, #signup-options, #details-page {
+/* Set display and layout properties for #signup-form, #signup-options, and #details-page */
+#signup-form,
+#signup-options,
+#details-page {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
 }
 
+/* Center text and set width and margin for all elements inside #signup-form */
 #signup-form * {
     text-align: center;
     width: 80%;
     margin: 10px auto;
 }
 
-#labels {
-    grid-area: labels;
-}
-
-#inputs {
-    grid-area: inputs;
-}
-
+/* Define grid layout for #details-form and its child elements */
 #details-form {
     display: grid;
     grid-template-columns: 30% auto;
-    grid-template-areas:
-        "labels inputs";
+    grid-template-areas: "labels inputs";
 }
 
+/* Add margin to all child elements of #details-page form div */
 #details-page form div * {
     margin-bottom: 20px;
 }
 
+/* Set font size and display block for all labels under #labels */
 #labels label {
     display: block;
     font-size: 20px;
 }
 
-
-#details-form input, select {
+/* Set width for all inputs and selects in #details-form */
+#details-form input,
+select {
     width: 100%;
 }
 
+/* Set width for input type "number" and "radio" in #details-form */
 #details-form input[type="number"] {
     width: 30%;
 }
+
 #details-form input[type="radio"] {
     width: auto;
 }
 
+/* Center and set height for #logo */
 #logo {
     height: 40%;
     display: flex;
@@ -82,6 +86,7 @@ body {
     align-content: center;
 }
 
+/* Set font size and center text in h1 */
 h1 {
     font-size: 60px;
     display: flex;
@@ -89,6 +94,7 @@ h1 {
     align-content: center;
 }
 
+/* Hide elements with class "hidden" */
 .hidden {
     display: none !important;
 }
