@@ -23,7 +23,7 @@ body {
 
 /* Set width and margin for #signup-options and #details-page */
 #signup-options,
-#details-page {
+#details-page, #goals-page {
     width: 85%;
     margin: auto;
 }
@@ -31,7 +31,8 @@ body {
 /* Set display and layout properties for #signup-form, #signup-options, and #details-page */
 #signup-form,
 #signup-options,
-#details-page {
+#details-page,
+#goals-page  {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -53,12 +54,12 @@ body {
 }
 
 /* Add margin to all child elements of #details-page form div */
-#details-page form div * {
+#details-page form div * , #goals-page form div *{
     margin-bottom: 20px;
 }
 
 /* Set font size and display block for all labels under #labels */
-#labels label {
+#labels label, #goals-form label {
     display: block;
     font-size: 20px;
 }
@@ -94,6 +95,17 @@ h1 {
     align-content: center;
 }
 
+#goals-form {
+    display: grid;
+    grid-template-columns: 10% 40% auto;
+    grid-template-areas: "checkboxes goal-labels goal-inputs";
+}
+#goals-form input[type="checkbox"] {
+    margin-top: 8px;
+}
+#finish {
+    width: 100%;
+}
 /* Hide elements with class "hidden" */
 .hidden {
     display: none !important;

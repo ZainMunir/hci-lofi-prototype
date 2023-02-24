@@ -65,16 +65,32 @@
         <div id="goals-page" class="hidden">
             <form id="goals-form">
                 <div id="checkboxes">
-
+                    <input type="checkbox" for="steps-goal">
+                    <input type="checkbox" for="weight-goal">
+                    <input type="checkbox" for="active-mins">
+                    <input type="checkbox" for="calorie">
+                    <button id="back2">Back</button>
                 </div>
                 <div id="goal-labels">
-
+                    <label for="steps-goal">Daily Steps</label>
+                    <label for="weight-goal">Ideal Weight</label>
+                    <label for="active-mins">Active Minutes</label>
+                    <label for="calorie">Calorie Intake</label>
                 </div>
                 <div id="goal-inputs">
-
+                    <input for="steps-goal" id="steps-goal" type="number" min="0" step="1000">
+                    <input for="weight-goal" id="weight-goal" type="text" min="0">
+                    <input for="active-mins" id="active-mins" type="number" min="0">
+                    <input for="" id="calorie" type="number" min="0">
+                    <input type="submit" id="finish" value="Finish">
                 </div>
             </form>
         </div>
+
+        <div id="stats-page" class="hidden">
+
+        </div>
+        <div id="bottom-bar" class="hidden"></div>
     </div>
 </body>
 
