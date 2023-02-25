@@ -92,7 +92,7 @@ window.addEventListener("DOMContentLoaded", () => {
                 e.target.classList.add("clicked");
             })
         }
-        document.querySelector(`.clickable`).classList.add("clicked");
+        document.querySelector(`p`).classList.add("clicked");
     }
 
     insertStats();
@@ -159,16 +159,6 @@ window.addEventListener("DOMContentLoaded", () => {
         modal.classList.toggle("hidden");
     }
 
-    // document.addEventListener('click', function (event) {
-    //     if (!modal.classList.contains("hidden")) {
-    //         if (!modal.contains(event.target)) {
-    //             // If not, hide the modal
-    //             modal.classList.add("hidden");
-    //         }
-    //     }
-    // }); 
-    // Doesn't work as the hidden class is immediately added back when clicking filter
-
     document.getElementById("main-video").addEventListener("click", () => {
         let success = document.getElementById("success");
         // success.id = "success";
@@ -176,17 +166,41 @@ window.addEventListener("DOMContentLoaded", () => {
         // container.appendChild(success);
         success.classList.remove("hidden");
     });
-    
+
     let back3_button = document.getElementById("back3");
     back3_button.addEventListener("click", go_back2.bind(null, "stats-page", "further-stats"));
 
     let back4_button = document.getElementById("back4");
     back4_button.addEventListener("click", go_back2.bind(null, "exercise-page", "further-exercise"));
-    
+
     function go_back2(prev, curr, e) {
         document.getElementById(prev).classList.toggle("hidden");
         document.getElementById(prev).classList.toggle("visible");
         document.getElementById(curr).classList.toggle("hidden");
         document.getElementById(curr).classList.toggle("visible");
+    }
+
+
+    // Stopwatch Implentation from ChatGPT
+
+    function updateStopwatch(startTime, endTime) {
+        const diff = new Date(endTime - startTime);
+        const hours = diff.getUTCHours().toString().padStart(2, '0');
+        const minutes = diff.getUTCMinutes().toString().padStart(2, '0');
+        const seconds = diff.getUTCSeconds().toString().padStart(2, '0');
+        document.getElementById('stopwatch').textContent = `${hours}:${minutes}:${seconds}`;
+    }
+    let startButton = document.getElementById("email")
+    startButton.addEventListener('click', startStopwatch);
+    function startStopwatch() {
+        const startTime = new Date();
+        startButton.removeEventListener('click', startStopwatch);
+        const intervalId = setInterval(function () {
+            const endTime = new Date();
+            updateStopwatch(startTime, endTime);
+        }, 1000);
+        document.getElementById("main-video").addEventListener("click", () => {
+            clearInterval(intervalId);
+        })
     }
 })
