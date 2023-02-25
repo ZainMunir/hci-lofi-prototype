@@ -23,7 +23,7 @@ body {
 
 /* Set width and margin for #signup-options and #details-page */
 #signup-options,
-#details-page, #goals-page {
+#details-page, #goals-page, #stats-page {
     width: 85%;
     margin: auto;
 }
@@ -117,6 +117,7 @@ h1 {
 .clickable:hover {
     background-color: lightgray;
 }
+
 .clicked {
     background-color: lightblue;
 }
@@ -133,6 +134,7 @@ p {
     border-top: 2px solid black;
     width: 100px;
     height: 50px;
+    font-size: 20px;
     margin: 0;
     display: flex;
     align-items: center;
@@ -140,5 +142,29 @@ p {
 }
 
 #stats-page, #exercise-page, #food-page, #settings-page {
-    height: 450px !important;
+    height: 400px !important;
+    padding: 25px 0
+}
+#main-stat {
+    grid-area: main-stat;
+}
+#stats-page {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: 30% auto auto;
+    grid-template-areas: 
+    "main-stat main-stat main-stat"
+    "a b c"
+    "d e f";
+}
+#stats-page div {
+    border: 1px solid black;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.other-stat {
+    margin: 30px 18px;
 }
