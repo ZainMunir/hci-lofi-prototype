@@ -14,6 +14,7 @@ body {
 
 /* Set width and height for #container and its child div elements */
 #container {
+    position: relative;
     width: 400px;
     height: 500px;
 }
@@ -217,10 +218,12 @@ img {
     z-index: 1;
     overflow: auto;
     background-color: rgba(212, 212, 212, 0.9);
-    padding: 5vw;
+    padding: 20px 10px;
+    text-align: center;
+    width: 50%;
     position: absolute;
     left: 50%;
-    top: 20%;
+    top: 40%;
     transform: translate(-50%, -50%);
 }
 
