@@ -7,6 +7,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const details_page = document.getElementById("details-page");
     const goals_page = document.getElementById("goals-page");
     const bottom_bar = document.getElementById("bottom-bar");
+    const stats_page = document.getElementById("stats-page");
 
     let signup_button = document.getElementById("signup");
     signup_button.addEventListener("click", (e) => {
@@ -48,11 +49,45 @@ window.addEventListener("DOMContentLoaded", () => {
         document.getElementById(curr).classList.toggle("hidden");
     }
 
+    let checkboxes = Array.from(document.querySelectorAll('input[type = "checkbox"]'));
+    checkboxes.forEach((checkbox) => {
+        checkbox.addEventListener('change', () => {
+            let input = document.getElementById(checkbox.attributes.for.value);
+            if (checkbox.checked) {
+                input.required = true;
+            } else {
+                input.required = false;
+            }
+        })
+    })
+
     let finish_button = document.getElementById("finish");
     finish_button.addEventListener("click", (e) => {
-        if (document.getElementById("goals-form").checkValidity) {
+        if (document.getElementById("goals-form").checkValidity()) {
             e.preventDefault();
             goals_page.classList.toggle("hidden");
+            bottom_bar.classList.toggle("hidden");
+            stats_page.classList.toggle("hidden");
+            stats_page.classList.toggle("visible");
         }
     })
+    insertBottomBar();
+    function insertBottomBar() {
+        let pages = ["stats", "exercise", "food", "settings"]
+        for (let page of pages) {
+            let p = document.createElement("p");
+            p.classList.add("clickable");
+            p.innerHTML = page;
+            bottom_bar.append(p);
+            p.addEventListener("click", (e) => {
+                document.querySelector(".visible").classList.toggle("hidden");
+                document.querySelector(".visible").classList.remove("visible");
+                document.getElementById(`${page}-page`).classList.toggle("hidden");
+                document.getElementById(`${page}-page`).classList.add("visible");
+                document.querySelector(`.clicked`).classList.remove("clicked");
+                e.target.classList.add("clicked");
+            })
+        }
+        document.querySelector(`.clickable`).classList.add("clicked");
+    }
 })

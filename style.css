@@ -32,7 +32,7 @@ body {
 #signup-form,
 #signup-options,
 #details-page,
-#goals-page  {
+#goals-page {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -54,7 +54,7 @@ body {
 }
 
 /* Add margin to all child elements of #details-page form div */
-#details-page form div * , #goals-page form div *{
+#details-page form div *, #goals-page form div * {
     margin-bottom: 20px;
 }
 
@@ -100,13 +100,45 @@ h1 {
     grid-template-columns: 10% 40% auto;
     grid-template-areas: "checkboxes goal-labels goal-inputs";
 }
+
 #goals-form input[type="checkbox"] {
     margin-top: 8px;
 }
+
 #finish {
     width: 100%;
 }
+
 /* Hide elements with class "hidden" */
 .hidden {
     display: none !important;
+}
+
+.clickable:hover {
+    background-color: lightgray;
+}
+.clicked {
+    background-color: lightblue;
+}
+
+#bottom-bar {
+    height: 50px !important;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+}
+
+p {
+    border: 1px solid black;
+    border-top: 2px solid black;
+    width: 100px;
+    height: 50px;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#stats-page, #exercise-page, #food-page, #settings-page {
+    height: 450px !important;
 }
