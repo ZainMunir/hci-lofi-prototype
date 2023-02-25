@@ -8,6 +8,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const goals_page = document.getElementById("goals-page");
     const bottom_bar = document.getElementById("bottom-bar");
     const stats_page = document.getElementById("stats-page");
+    const further_stats_page = document.getElementById("further-stats");
 
     let signup_button = document.getElementById("signup");
     signup_button.addEventListener("click", (e) => {
@@ -71,6 +72,7 @@ window.addEventListener("DOMContentLoaded", () => {
             stats_page.classList.toggle("visible");
         }
     })
+
     insertBottomBar();
     function insertBottomBar() {
         let pages = ["stats", "exercise", "food", "settings"]
@@ -89,5 +91,30 @@ window.addEventListener("DOMContentLoaded", () => {
             })
         }
         document.querySelector(`.clickable`).classList.add("clicked");
+    }
+
+    insertStats();
+    function insertStats() {
+        let main_stat = document.createElement("div");
+        main_stat.innerHTML = "Main Stat";
+        main_stat.id = "main-stat";
+        main_stat.classList.add("clickable")
+        stats_page.appendChild(main_stat);
+        stats_page.addEventListener("click", furtherStats);
+        for (var i = 1; i <= 6; i++) {
+            let stat = document.createElement("div");
+            stat.classList.add("clickable");
+            stat.classList.add("other-stat");
+            stat.innerHTML = i;
+            stats_page.appendChild(stat);
+            stats_page.addEventListener("click", furtherStats);
+        }
+    }
+
+    function furtherStats() {
+        stats_page.classList.toggle("hidden");
+        stats_page.classList.toggle("visible");
+        further_stats_page.classList.toggle("hidden");
+        further_stats_page.classList.toggle("visible");
     }
 })

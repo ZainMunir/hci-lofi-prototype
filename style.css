@@ -23,7 +23,7 @@ body {
 
 /* Set width and margin for #signup-options and #details-page */
 #signup-options,
-#details-page, #goals-page, #stats-page {
+#details-page, #goals-page, #stats-page, #further-stats {
     width: 85%;
     margin: auto;
 }
@@ -141,7 +141,7 @@ p {
     justify-content: center;
 }
 
-#stats-page, #exercise-page, #food-page, #settings-page {
+#stats-page, #exercise-page, #food-page, #settings-page, #further-stats {
     height: 400px !important;
     padding: 25px 0
 }
@@ -157,6 +157,11 @@ p {
     "a b c"
     "d e f";
 }
+
+img {
+    width: 100%
+}
+
 #stats-page div {
     border: 1px solid black;
     font-size: 30px;
@@ -167,4 +172,11 @@ p {
 
 .other-stat {
     margin: 30px 18px;
+}
+
+
+#further-stats div {
+    height: 10%;
+    border: 1px solid black;
+    margin: 10px;
 }
