@@ -16,7 +16,6 @@ window.addEventListener("DOMContentLoaded", () => {
     signup_button.addEventListener("click", (e) => {
         let email_input = document.getElementById("email");
         let password_input = document.getElementById("password");
-
         if (document.getElementById("signup-form").checkValidity()) {
             e.preventDefault();
             email = email_input.value;
@@ -30,7 +29,8 @@ window.addEventListener("DOMContentLoaded", () => {
     next_button.addEventListener("click", (e) => {
         if (document.getElementById("details-form").checkValidity()) {
             e.preventDefault();
-            // name = document.getElementById("name").value;
+            name = document.getElementById("name").value;
+            document.getElementById("settings-page").innerHTML = `Hello ${name}`;
             weight = document.getElementById("weight").value;
             weight_units = document.querySelector('input[name="weight-measurement"]:checked').value;
             let weight_goal = document.getElementById("weight-goal");
@@ -168,4 +168,25 @@ window.addEventListener("DOMContentLoaded", () => {
     //     }
     // }); 
     // Doesn't work as the hidden class is immediately added back when clicking filter
+
+    document.getElementById("main-video").addEventListener("click", () => {
+        let success = document.getElementById("success");
+        // success.id = "success";
+        // success.innerHTML = "You did it!"
+        // container.appendChild(success);
+        success.classList.remove("hidden");
+    });
+    
+    let back3_button = document.getElementById("back3");
+    back3_button.addEventListener("click", go_back2.bind(null, "stats-page", "further-stats"));
+
+    let back4_button = document.getElementById("back4");
+    back4_button.addEventListener("click", go_back2.bind(null, "exercise-page", "further-exercise"));
+    
+    function go_back2(prev, curr, e) {
+        document.getElementById(prev).classList.toggle("hidden");
+        document.getElementById(prev).classList.toggle("visible");
+        document.getElementById(curr).classList.toggle("hidden");
+        document.getElementById(curr).classList.toggle("visible");
+    }
 })

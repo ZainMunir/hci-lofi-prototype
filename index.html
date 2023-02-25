@@ -7,10 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
-    <title>Dumb Idea</title>
+    <title>HCI prototype</title>
 </head>
 
 <body>
+    <h2>Goal: Start an Exercise</h2>
     <div id="container">
         <div id="starting-page">
             <div id="logo">
@@ -18,8 +19,8 @@
             </div>
             <div id="signup-options">
                 <form id="signup-form">
-                    <input type="email" id="email" name="email" placeholder="Email" ><!-- required-->
-                    <input type="password" id="password" name="password" placeholder="Password" minlength="8" ><!-- required-->
+                    <input type="email" id="email" name="email" placeholder="Email" required>
+                    <input type="password" id="password" name="password" placeholder="Password" minlength="8" required>
                     <input type="submit" id="signup" value="Sign up!">
                 </form>
             </div>
@@ -37,23 +38,23 @@
                     <button id="back1">Back</button>
                 </div>
                 <div id="inputs">
-                    <input type="text" id="name" ><!-- required--><br>
+                    <input type="text" id="name" required><br>
 
                     <input type="date" id="date"><br>
 
-                    <input type="number" id="height" min="0" ><!-- required-->
-                    <input type="radio" id="cm" name="height-measurement" value="cm" ><!-- required-->
+                    <input type="number" id="height" min="0" required>
+                    <input type="radio" id="cm" name="height-measurement" value="cm" required>
                     <label for="cm">cm</label>
                     <input type="radio" id="inches" name="height-measurement" value="inches">
                     <label for="inches">inches</label><br>
 
-                    <input type="number" id="weight" min="0" ><!-- required-->
-                    <input type="radio" id="kg" name="weight-measurement" value="kg" ><!-- required-->
+                    <input type="number" id="weight" min="0" required>
+                    <input type="radio" id="kg" name="weight-measurement" value="kg" required>
                     <label for="kg">kg</label>
                     <input type="radio" id="pounds" name="weight-measurement" value="pounds">
                     <label for="pounds">pounds</label><br>
 
-                    <select name="disabilities" id="disabilities" ><!-- required-->
+                    <select name="disabilities" id="disabilities" required>
                         <option value="None">None</option>
                         <option value="Other">Other</option>
                     </select>
@@ -87,16 +88,10 @@
             </form>
         </div>
 
-        <div id="stats-page" class="hidden">
-            <!-- <div id="main-stat">Main Stat</div>
-            <div class="other-stat">1</div>
-            <div class="other-stat">2</div>
-            <div class="other-stat">3</div>
-            <div class="other-stat">4</div>
-            <div class="other-stat">5</div>
-            <div class="other-stat">6</div> -->
-        </div>
+        <div id="stats-page" class="hidden"></div>
+
         <div id="further-stats" class="hidden">
+            <button id="back3" class="page-back">&lt</button>
             <img src="https://s3.amazonaws.com/scribblelive-com-prod/wp-content/uploads/2013/04/unlabeled-bars.png">
             <div></div>
             <div></div>
@@ -107,20 +102,33 @@
             <div id="filter-button">Filter</div>
             <div id="modal" class="hidden">
                 There's nothing here
-            <button id="close">Close</button>
+                <button id="close">Close</button>
             </div>
         </div>
         <div id="further-exercise" class="hidden">
-
+            <button id="back4" class="page-back">&lt</button>
+            <div id="main-video">
+                <img src="https://cdn-icons-png.flaticon.com/512/494/494568.png" id="bookmark">
+                <img src="https://cdn-icons-png.flaticon.com/512/0/375.png" class="play">
+                <div id="timestamp">1:00</div>
+            </div>
+            <div id="subheading">Difficulty | Calories</div>
+            <div id="comments"> Comments
+                <div></div>
+                <div></div>
+            </div>
         </div>
         <div id="food-page" class="hidden">
             Nothing to see here
         </div>
         <div id="settings-page" class="hidden">
-            Nothing to see here
         </div>
         <div id="bottom-bar" class="hidden"></div>
+        <div id="success" class="hidden">You did it!</div>
     </div>
+    <iframe
+        src="https://docs.google.com/forms/d/e/1FAIpQLSd_2p-dPd17bpD1BWC2x4Pe6bOw6qgbEtuofd80GD0VLxTUCA/viewform?embedded=true"
+        width="400" height="600" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
 </body>
 
 </html>
