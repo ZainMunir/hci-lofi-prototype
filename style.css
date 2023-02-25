@@ -141,7 +141,7 @@ p {
     justify-content: center;
 }
 
-#stats-page, #exercise-page, #food-page, #settings-page, #further-stats {
+#stats-page, #exercise-page, #food-page, #settings-page, #further-stats, #further-exercise {
     height: 400px !important;
     padding: 25px 0
 }
@@ -174,9 +174,47 @@ img {
     margin: 30px 18px;
 }
 
-
 #further-stats div {
     height: 10%;
     border: 1px solid black;
     margin: 10px;
+}
+
+.play {
+    width: 50px;
+}
+#filter-button {
+    font-size: 20px;
+    margin: 0 35%;
+    border: 2px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.exercise {
+    display: flex;
+    justify-content: space-around;
+    height: 25%;
+}
+
+.exercise div {
+    width: 30%;
+    margin: 10px 0;
+    border: 1px solid black;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#modal {
+    z-index: 1;
+    overflow: auto;
+    background-color: rgba(212, 212, 212, 0.9);
+    padding: 5vw;
+    position: absolute;
+    left: 50%;
+    top: 20%;
+    transform: translate(-50%, -50%);
 }

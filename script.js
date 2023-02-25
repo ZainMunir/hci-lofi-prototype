@@ -9,6 +9,8 @@ window.addEventListener("DOMContentLoaded", () => {
     const bottom_bar = document.getElementById("bottom-bar");
     const stats_page = document.getElementById("stats-page");
     const further_stats_page = document.getElementById("further-stats");
+    const exercise_page = document.getElementById("exercise-page");
+    const further_exercise_page = document.getElementById("further-exercise");
 
     let signup_button = document.getElementById("signup");
     signup_button.addEventListener("click", (e) => {
@@ -117,4 +119,53 @@ window.addEventListener("DOMContentLoaded", () => {
         further_stats_page.classList.toggle("hidden");
         further_stats_page.classList.toggle("visible");
     }
+
+    insertExercise();
+    function insertExercise() {
+        for (var i = 1; i <= 4; i++) {
+            let exercise = document.createElement("div");
+            let video = document.createElement("div");
+            video.classList.add("video");
+            let image = document.createElement("img");
+            image.src = "https://cdn-icons-png.flaticon.com/512/0/375.png"
+            image.classList.add("play");
+            video.appendChild(image);
+            let text = document.createElement("div");
+            text.innerHTML = `desc ${i}`
+            text.classList.add("video-desc");
+            exercise.classList.add("clickable");
+            exercise.classList.add("exercise");
+            exercise.appendChild(video);
+            exercise.appendChild(text);
+            exercise_page.appendChild(exercise);
+            exercise.addEventListener("click", () => {
+                exercise_page.classList.toggle("hidden");
+                exercise_page.classList.toggle("visible");
+                further_exercise_page.classList.toggle("hidden");
+                further_exercise_page.classList.toggle("visible");
+            })
+        }
+    }
+
+    let modal = document.getElementById("modal");
+
+    let filter_button = document.getElementById("filter-button");
+    filter_button.addEventListener("click", modal_handler);
+
+    let close_button = document.getElementById("close");
+    close_button.addEventListener("click", modal_handler);
+
+    function modal_handler() {
+        modal.classList.toggle("hidden");
+    }
+
+    // document.addEventListener('click', function (event) {
+    //     if (!modal.classList.contains("hidden")) {
+    //         if (!modal.contains(event.target)) {
+    //             // If not, hide the modal
+    //             modal.classList.add("hidden");
+    //         }
+    //     }
+    // }); 
+    // Doesn't work as the hidden class is immediately added back when clicking filter
 })
