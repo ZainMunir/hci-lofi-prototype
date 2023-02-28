@@ -165,6 +165,7 @@ window.addEventListener("DOMContentLoaded", () => {
         // success.innerHTML = "You did it!"
         // container.appendChild(success);
         success.classList.remove("hidden");
+        document.querySelector("iframe").classList.remove("hidden");
     });
 
     let back3_button = document.getElementById("back3");
